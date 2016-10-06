@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stop Police</string>
+    <string name="bedankt_bericht">Thanks for your application, your request is being processed</string>
+    <string name="category">Category</string>
+    <string name="eerstekleur_text">Color #1</string>
+    <string name="intro_text">Choose option down below</string>
+    <string name="kenteken_text">License plate number</string>
+    <string name="merk_text">Brand</string>
+    <string name="model_text">Model</string>
+    <string name="opzoeken">Request</string>
+    <string name="opzoeken_intro">Fill in license plate down below</string>
+    <string name="opzoeken_knop">Retrieve</string>
+    <string name="scanner">Scanner</string>
+    <string name="toevoegen">Add</string>
+    <string name="toevoegen_intro">Enter license plate and your email address</string>
+    <string name="toevoegen_knop">Add</string>
+    <string name="tweedekleur">Color #2</string>
+    <string name="copyrighttext">© 2016 by Congreats</string>
+    <string name="contact">Contact</string>
+    <string name="hulp">Help</string>
+    <string name="over">About</string>
+</resources>

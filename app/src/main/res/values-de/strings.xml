@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Halt Polizei</string>
+    <string name="bedankt_bericht">Danku  für Ihre zeigen, Ihre anforderung werde verarbeitet</string>
+    <string name="category">Kategorie</string>
+    <string name="eerstekleur_text">Farbe #1</string>
+    <string name="intro_text">Wählen Sie eine Option unten</string>
+    <string name="kenteken_text">Kennzeichen</string>
+    <string name="merk_text">Marke</string>
+    <string name="model_text">Modell</string>
+    <string name="opzoeken">Aufrufen</string>
+    <string name="opzoeken_intro">Das kennzeichen hier ausfüllen</string>
+    <string name="opzoeken_knop">Erhalten</string>
+    <string name="scanner">Scanner</string>
+    <string name="toevoegen">Hinzufügen</string>
+    <string name="toevoegen_intro">Geben Sie kennzeichen und Ihre E-Mail-Adresse</string>
+    <string name="toevoegen_knop">hinzufügen</string>
+    <string name="tweedekleur">Farbe #2</string>
+    <string name="copyrighttext">© 2016 bei Congreats</string>
+    <string name="contact">Kontakt</string>
+    <string name="hulp">Hilfe</string>
+    <string name="over">Über</string>
+</resources>

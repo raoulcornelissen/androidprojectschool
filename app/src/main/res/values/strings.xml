@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Stop Politie</string>
+    <string name="intro_text">Kies optie hieronder</string>
+    <!-- Action Bar Menu Items -->
+    <string name="over">Over deze app</string>
+    <string name="hulp">Hulp</string>
+    <string name="contact">Contact</string>
+    <!-- Alles voor opvragen -->
+    <string name="opzoeken">Opvragen</string> <!-- MainActivity Button -->
+        <string name="opzoeken_intro">Vul kenteken in</string>
+        <string name="opzoeken_knop">Ophalen</string> <!-- OpvragenActivity Button -->
+        <!-- Catergory Strings -->
+            <string name="kenteken_text">Kenteken</string>
+            <string name="merk_text">Merk</string>
+            <string name="model_text">Model</string>
+            <string name="eerstekleur_text">Kleur #1</string>
+            <string name="tweedekleur">Kleur #2</string>
+            <string name="category">Categorie</string>
+    <!-- Alles voor toevoegen  -->
+    <string name="toevoegen">Toevoegen</string> <!-- MainActivity Button -->
+        <string name="toevoegen_intro">Vul kenteken en email in</string>
+        <string name="toevoegen_knop">Voeg toe</string> <!-- ToevoegenActivity Button -->
+        <string name="bedankt_bericht">Bedankt voor uw inzending, uw verzoek wordt verwerkt!</string>
+    <!-- Alles voor scanner -->
+    <string name="scanner">Scanner</string> <!-- MainActivity Button -->
+
+
+
+
+
+    <!-- Copyright -->
+    <string name="copyrighttext">© 2016 door Congreats</string>
+</resources>
