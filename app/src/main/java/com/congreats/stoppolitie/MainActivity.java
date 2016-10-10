@@ -27,10 +27,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.help:
-                Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.email");
-                if (launchIntent != null) {
-                    startActivity(launchIntent);
-                }
+                Intent intent2 = new Intent(this, HelpActivity.class);
+                startActivity(intent2);
                 return true;
             case R.id.contact:
                 Intent launchIntent2 = getPackageManager().getLaunchIntentForPackage("com.android.camera");
