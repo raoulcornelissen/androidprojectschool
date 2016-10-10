@@ -45,4 +45,6 @@
     <string name="sender_email">Ihre E-Mail:</string>
     <string name="sender_message">Ihre Nachricht:</string>
     <string name="sender_name">Ihr Name:</string>
+    <string name="getkenteken_intro">Hier können Sie Nummernschilder erhalten manuell</string>
+    <string name="opzoeken_title">Abrufen Kennzeichen info</string>
 </resources>

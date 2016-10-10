@@ -6,4 +6,7 @@
     <!-- Grey Colors -->
     <color name="greylight">#546E7A</color>
     <color name="greylighter">#78909C</color>
+    <!-- Kenteken Kleuren -->
+    <color name="kentekenyellow">#FBD603</color>
+    <color name="kentekenblack">#000000</color>
 </resources>

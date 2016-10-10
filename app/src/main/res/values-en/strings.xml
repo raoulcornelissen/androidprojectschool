@@ -45,4 +45,6 @@
     <string name="sender_email">Your E-mail</string>
     <string name="sender_message">Your Message</string>
     <string name="sender_name">Your Name</string>
+    <string name="getkenteken_intro">Here you can request a manual search for license plates</string>
+    <string name="opzoeken_title">Retrieve license plate info</string>
 </resources>

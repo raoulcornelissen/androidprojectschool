@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="@string/opzoeken_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_alignParentTop="true"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="@string/getkenteken_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView5"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/kenteken_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="22dp"
+        android:id="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapCharacters"
+        android:ems="10"
+        android:id="@+id/kentekenbox"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/button5"
+        android:background="@color/kentekenyellow"
+        android:layout_weight="0.07"
+        android:typeface="normal"
+        android:textSize="30sp"
+        android:textAllCaps="true"
+        android:textStyle="normal|bold"
+        android:textAlignment="center"/>
+
+    <Button
+        android:text="@string/opzoeken_knop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:onClick="getsearch"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp" />
+    <!-- Kenteken Gegevens -->
+    <!-- Kenteken Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/kenteken_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView12"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Ingevoerd Kenteken Hier}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/kentekentextfield"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="0.13" />
+    </LinearLayout>
+    <!-- Merk Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/merk_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView13"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Merk van voertuig hier}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/merktext"
+            android:layout_marginLeft="42dp"
+            android:layout_weight="0.13"
+            />
+    </LinearLayout>
+    <!-- Model Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/model_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView14"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Model hier}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/modeltext"
+            android:layout_marginLeft="34dp"
+            android:layout_weight="0.13"
+            />
+    </LinearLayout>
+    <!-- Eerste kleur Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/eerstekleur_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView15"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Kleur 1}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eerstekleur"
+            android:layout_marginLeft="21dp"
+            android:layout_weight="0.13"
+            />
+    </LinearLayout>
+    <!-- Tweede kleur Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/tweedekleur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView16"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Kleur 2}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tweedekleur"
+            android:layout_marginLeft="21dp"
+            android:layout_weight="0.13"
+            />
+    </LinearLayout>
+    <!-- Categorie Rij -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView17"
+            android:layout_alignTop="@+id/textView6"
+            android:gravity="left"/>
+
+        <TextView
+            android:text="{Categorie hier}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/category"
+            android:layout_marginLeft="13dp"
+            android:layout_weight="0.13"
+            />
+    </LinearLayout>
+</LinearLayout>

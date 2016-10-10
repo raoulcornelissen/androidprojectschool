@@ -29,7 +29,8 @@
         android:id="@+id/button2"
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="getOpvragen"/>
 
     <Button
         android:text="@string/toevoegen"

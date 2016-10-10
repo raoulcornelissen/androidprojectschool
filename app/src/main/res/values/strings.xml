@@ -7,8 +7,10 @@
     <string name="contact">Contact</string>
     <!-- Alles voor opvragen -->
     <string name="opzoeken">Opvragen</string> <!-- MainActivity Button -->
-        <string name="opzoeken_intro">Vul kenteken in</string>
         <string name="opzoeken_knop">Ophalen</string> <!-- OpvragenActivity Button -->
+            <!-- GetKentekenActivity -->
+            <string name="opzoeken_title">Kenteken opvragen</string>
+            <string name="getkenteken_intro">Hier kunt u kentekens handmatig opvragen</string>
         <!-- Catergory Strings -->
             <string name="kenteken_text">Kenteken</string>
             <string name="merk_text">Merk</string>
@@ -60,6 +62,8 @@
         <string name="send_message_button">Verstuur</string>
 
 
+
     <!-- Copyright -->
     <string name="copyrighttext">© 2016 door Congreats</string>
+    <string name="opzoeken_intro">Vul hier het kenteken van het voertuig in</string>
 </resources>
