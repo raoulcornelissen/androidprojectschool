@@ -31,10 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 return true;
             case R.id.contact:
-                Intent launchIntent2 = getPackageManager().getLaunchIntentForPackage("com.android.camera");
-                if (launchIntent2 != null) {
-                    startActivity(launchIntent2);
-                }
+                Intent intent3 = new Intent(this, ContactActivity.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
