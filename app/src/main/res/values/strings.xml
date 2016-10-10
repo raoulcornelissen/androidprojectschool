@@ -23,8 +23,18 @@
         <string name="bedankt_bericht">Bedankt voor uw inzending, uw verzoek wordt verwerkt!</string>
     <!-- Alles voor scanner -->
     <string name="scanner">Scanner</string> <!-- MainActivity Button -->
-
-
+    <!-- Over pagina -->
+    <string name="about_title">Over deze app</string>
+    <!-- Disclaimer -->
+    <string name="disclaimer_intro">Dit is de disclaimer van de app</string>
+    <string name="disclaimer_one">Het is niet verantwoord om deze app te gebruiken tijdens het besturen van een voertuig.</string>
+    <string name="disclaimer_tow">Wij stellen ons niet aansprakelijk als u toch een boete krijgt voor het gebruik van deze app, of dat een kenteken niet herkend wordt.</string>
+    <string name="disclaimer_three">Voor deze app wordt elke week een automatische update uitgepland</string>
+    <string name="disclaimer_four">Met het invoeren van een kenteken, geeft u aan een geldig kenteken ingevoerd te hebben.</string>
+    <!-- Algemene informatie -->
+    <string name="app_version">App versie:</string>
+    <string name="app_developers">App Ontwikkelaars:</string>
+    <string name="app_developers_names">Nick van Kesteren en Raoul Cornelissen</string>
 
 
 

@@ -23,10 +23,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
             case R.id.over:
-                Intent launchIntent1 = getPackageManager().getLaunchIntentForPackage("com.android.camera");
-                if (launchIntent1 != null) {
-                    startActivity(launchIntent1);
-                }
+                Intent intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
                 return true;
             case R.id.help:
                 Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.email");
