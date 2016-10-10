@@ -9,4 +9,5 @@
     <!-- Kenteken Kleuren -->
     <color name="kentekenyellow">#FBD603</color>
     <color name="kentekenblack">#000000</color>
+    <color name="kentekenblue">#014DDF</color>
 </resources>
