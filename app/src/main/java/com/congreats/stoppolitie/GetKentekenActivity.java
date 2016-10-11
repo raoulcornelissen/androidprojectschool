@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,43 +31,64 @@ public class GetKentekenActivity extends AppCompatActivity {
         setContentView(R.layout.getkenteken_activity);
 
     }
-    public void getsearch(View view){
-        EditText input_kenteken =  (EditText)findViewById(R.id.kentekenbox);
+    public void getsearch(View view) {
+        EditText input_kenteken = (EditText) findViewById(R.id.kentekenbox);
         String kenteken = input_kenteken.getText().toString();
-        try {
-            String response = new RetrieveFeedTask(kenteken).execute().get();
+        int kentekenlengte = kenteken.length();
+        if (kentekenlengte != 6) {
+            Toast.makeText(this, "Invalid", Toast.LENGTH_LONG).show();
+        } else {
             try {
-                JSONArray array = (JSONArray) new JSONTokener(response).nextValue();
-                JSONObject object = (JSONObject) array.getJSONObject(0);
-                //Kenteken
-                String kentekentext = object.getString("kenteken");
-                TextView kentekenfield = (TextView)findViewById(R.id.kentekentextfield);
-                kentekenfield.setText(kentekentext);
-                //Merk van auto
-                String merktext = object.getString("merk");
-                TextView merktextfield = (TextView)findViewById(R.id.merktext);
-                merktextfield.setText(merktext);
-                //Model van auto
-                String modeltext = object.getString("handelsbenaming");
-                TextView modeltextfield = (TextView)findViewById(R.id.modeltext);
-                modeltextfield.setText(modeltext);
-                //Eerste kleur van auto
-                String kleurtext = object.getString("eerste_kleur");
-                TextView kleurtextfield = (TextView)findViewById(R.id.eerstekleur);
-                kleurtextfield.setText(kleurtext);
-                //Tweede kleur van auto
-                String kleurtext2 = object.getString("tweede_kleur");
-                TextView kleurtextfield2 = (TextView)findViewById(R.id.tweedekleur);
-                kleurtextfield2.setText(kleurtext2);
-                //Categorie van auto
-                String categorietext = object.getString("europese_voertuigcategorie");
-                TextView categorietextfield = (TextView)findViewById(R.id.category);
-                categorietextfield.setText(categorietext);
-            } catch (JSONException e) {
-                // Appropriate error handling code
+                String response = new RetrieveFeedTask(kenteken).execute().get();
+                try {
+                    Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
+                    JSONArray array = (JSONArray) new JSONTokener(response).nextValue();
+                    JSONObject object = (JSONObject) array.getJSONObject(0);
+                    //Kenteken
+                    String kentekentext = object.getString("kenteken");
+                    TextView kentekenfield = (TextView) findViewById(R.id.kentekentextfield);
+                    kentekenfield.setText(kentekentext);
+                    //Merk van auto
+                    String merktext = object.getString("merk");
+                    TextView merktextfield = (TextView) findViewById(R.id.merktext);
+                    merktextfield.setText(merktext);
+                    //Model van auto
+                    String modeltext = object.getString("handelsbenaming");
+                    TextView modeltextfield = (TextView) findViewById(R.id.modeltext);
+                    modeltextfield.setText(modeltext);
+                    //Eerste kleur van auto
+                    String kleurtext = object.getString("eerste_kleur");
+                    TextView kleurtextfield = (TextView) findViewById(R.id.eerstekleur);
+                    kleurtextfield.setText(kleurtext);
+                    //Tweede kleur van auto
+                    String kleurtext2 = object.getString("tweede_kleur");
+                    TextView kleurtextfield2 = (TextView) findViewById(R.id.tweedekleur);
+                    kleurtextfield2.setText(kleurtext2);
+                    //Categorie van auto
+                    String categorietext = object.getString("europese_voertuigcategorie");
+                    TextView categorietextfield = (TextView) findViewById(R.id.category);
+                    String m1 = "M1";
+                    if(categorietext.equals("M1") || categorietext.equals("M2") || categorietext.equals("M3"))
+                        {
+                            categorietextfield.setText("Personenauto/Bussen");
+                        }else if(categorietext.equals("N1") || categorietext.equals("N2") || categorietext.equals("N3"))
+                        {
+                            categorietextfield.setText("Vrachtauto's");
+                        }else if(categorietext.equals("O1") || categorietext.equals("O2") || categorietext.equals("O3") || categorietext.equals("O4"))
+                        {
+                            categorietextfield.setText("Aanhangwagens");
+                        }else
+                        {
+                            categorietextfield.setText(categorietext);
+                        }
+
+                    } catch (JSONException e) {
+                    // Appropriate error handling code
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                Toast.makeText(this, "Dit kenteken bestaat niet!", Toast.LENGTH_SHORT).show();
             }
-        }catch(Exception ex){
-            ex.printStackTrace();
         }
     }
 

@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">Stop Politie</string>
-    <string name="intro_text">Kies optie hieronder</string>
+    <!-- activity names -->
+    <string name="aboutheadertext">Stop Politie - Over deze app</string>
+    <string name="helpheadertext">Stop Politie - Hulp pagina</string>
+    <string name="contactheadertext">Stop Politie - Contact opnemen</string>
+    <string name="kentekenopvragenheadertext">Stop Politie - Kenteken opvragen</string>
+    <string name="kentekentoevoegenheadertext">Stop Politie - Kenteken toevoegen</string>
+    <string name="kentekenscannerheadertext">Stop Politie - Kenteken scannen</string>
+<string name="intro_text">Kies optie hieronder</string>
     <!-- Action Bar Menu Items -->
     <string name="over">Over deze app</string>
     <string name="hulp">Hulp</string>

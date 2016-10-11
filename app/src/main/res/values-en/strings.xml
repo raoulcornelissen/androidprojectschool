@@ -47,4 +47,10 @@
     <string name="sender_name">Your Name</string>
     <string name="getkenteken_intro">Here you can request a manual search for license plates</string>
     <string name="opzoeken_title">Retrieve license plate info</string>
+    <string name="aboutheadertext">Stop Police - About this app</string>
+    <string name="contactheadertext">Stop Police - Contact</string>
+    <string name="helpheadertext">Stop Police - Help</string>
+    <string name="kentekenopvragenheadertext">Stop Police - Retrieve licensplate info</string>
+    <string name="kentekenscannerheadertext">Stop Police - Scan licensplate</string>
+    <string name="kentekentoevoegenheadertext">Stop Police - Add licenseplate</string>
 </resources>

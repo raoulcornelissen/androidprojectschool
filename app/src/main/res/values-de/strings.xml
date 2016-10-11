@@ -47,4 +47,10 @@
     <string name="sender_name">Ihr Name:</string>
     <string name="getkenteken_intro">Hier können Sie Nummernschilder erhalten manuell</string>
     <string name="opzoeken_title">Abrufen Kennzeichen info</string>
+    <string name="aboutheadertext">Halt Polizei - Über diese App</string>
+    <string name="contactheadertext">Halt Polizei - Kontakt</string>
+    <string name="helpheadertext">Halt Polizei - Hilfe Seite</string>
+    <string name="kentekenopvragenheadertext">Halt Polizei - Kennzeichen afrufen</string>
+    <string name="kentekenscannerheadertext">Halt Polizei - Kennzeichen fotografieren</string>
+    <string name="kentekentoevoegenheadertext">Halt Polizei - Kennzeichen hinzufügen</string>
 </resources>
