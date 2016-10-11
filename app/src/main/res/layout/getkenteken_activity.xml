@@ -62,7 +62,9 @@
         android:onClick="getsearch"
         android:layout_below="@+id/textView6"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:elevation="0dp"
+        android:clickable="false" />
     <!-- Kenteken Gegevens -->
     <!-- Kenteken Rij -->
     <LinearLayout
@@ -85,7 +87,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/kentekentextfield"
-            android:layout_marginLeft="15dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />
@@ -111,7 +112,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/merktext"
-            android:layout_marginLeft="42dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />
@@ -137,7 +137,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/modeltext"
-            android:layout_marginLeft="34dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />
@@ -163,7 +162,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/eerstekleur"
-            android:layout_marginLeft="21dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />
@@ -189,7 +187,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tweedekleur"
-            android:layout_marginLeft="21dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />
@@ -215,7 +212,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/category"
-            android:layout_marginLeft="13dp"
             android:layout_weight="0.13"
             android:textAlignment="viewEnd"
             android:textSize="18sp" />

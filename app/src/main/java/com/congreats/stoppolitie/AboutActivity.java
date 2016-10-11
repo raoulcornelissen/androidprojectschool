@@ -15,6 +15,15 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_activity);
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String version = pInfo.versionName;
+            int verCode = pInfo.versionCode;
+            TextView myAwesomeTextView = (TextView)findViewById(R.id.appversion);
+            myAwesomeTextView.setText("" + version);
+        }catch (Exception ex){
+
+        }
 
     }
 
