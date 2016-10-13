@@ -33,7 +33,7 @@ public class GetKentekenActivity extends AppCompatActivity {
     }
     public void getsearch(View view) {
         EditText input_kenteken = (EditText) findViewById(R.id.kentekenbox);
-        String kenteken = input_kenteken.getText().toString();
+        String kenteken = input_kenteken.getText().toString().toUpperCase();
         int kentekenlengte = kenteken.length();
         if (kentekenlengte != 6) {
             Toast.makeText(this, "Invalid", Toast.LENGTH_LONG).show();
@@ -41,7 +41,7 @@ public class GetKentekenActivity extends AppCompatActivity {
             try {
                 String response = new RetrieveFeedTask(kenteken).execute().get();
                 try {
-                    Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
+
                     JSONArray array = (JSONArray) new JSONTokener(response).nextValue();
                     JSONObject object = (JSONObject) array.getJSONObject(0);
                     //Kenteken
@@ -68,22 +68,39 @@ public class GetKentekenActivity extends AppCompatActivity {
                     String categorietext = object.getString("europese_voertuigcategorie");
                     TextView categorietextfield = (TextView) findViewById(R.id.category);
                     String m1 = "M1";
+                    //https://www.rdw.nl/sites/tgk/Paginas/Voertuigcategorie%C3%ABn.aspx <-- Hier komt alle informatie van de categorien vandaan
                     if(categorietext.equals("M1") || categorietext.equals("M2") || categorietext.equals("M3"))
                         {
-                            categorietextfield.setText("Personenauto/Bussen");
+                            categorietextfield.setText("Personenautos en Bussen");
                         }else if(categorietext.equals("N1") || categorietext.equals("N2") || categorietext.equals("N3"))
                         {
-                            categorietextfield.setText("Vrachtauto's");
+                            categorietextfield.setText("Vrachtautos");
                         }else if(categorietext.equals("O1") || categorietext.equals("O2") || categorietext.equals("O3") || categorietext.equals("O4"))
                         {
                             categorietextfield.setText("Aanhangwagens");
+                        }else if(categorietext.equals("L1e") || categorietext.equals("L2e") || categorietext.equals("L3e") || categorietext.equals("L4e") || categorietext.equals("L5e") || categorietext.equals("L6e") || categorietext.equals("L7e"))
+                        {
+                            categorietextfield.setText("Twee- en driewielige voertuigen");
+                        }else if(categorietext.equals("T1") || categorietext.equals("T2") || categorietext.equals("T3") || categorietext.equals("T4") || categorietext.equals("T5"))
+                        {
+                         categorietextfield.setText("Trekkers op wielen");
+                        }else if (categorietext.equals("C"))
+                        {
+                         categorietextfield.setText("Trekkers op rupsbanden");
+                        }else if(categorietext.equals("R1") || categorietext.equals("R2") || categorietext.equals("R3") || categorietext.equals("R4"))
+                        {
+                            categorietextfield.setText("Aanhangwagen t.b.v. land-of bosbouw");
+                        }else if(categorietext.equals("S1") || categorietext.equals("S2"))
+                        {
+                            categorietextfield.setText("Verwisselbare getrokken machines");
                         }else
                         {
                             categorietextfield.setText(categorietext);
                         }
-
+                    Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
                     } catch (JSONException e) {
                     // Appropriate error handling code
+                    e.printStackTrace();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();

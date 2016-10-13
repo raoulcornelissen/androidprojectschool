@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent4 = new Intent(this, GetKentekenActivity.class);
         startActivity(intent4);
     }
+    public void getToevoegen(View view){
+        Intent intent5 = new Intent(this, AddKentekenActivity.class);
+        startActivity(intent5);
+    }
 }

@@ -28,6 +28,9 @@
         <activity android:name=".GetKentekenActivity"
             android:label="@string/kentekenopvragenheadertext">
         </activity>
+        <activity android:name=".AddKentekenActivity"
+            android:label="@string/kentekentoevoegenheadertext">
+        </activity>
     </application>
 
 </manifest>
