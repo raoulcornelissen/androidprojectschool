@@ -68,22 +68,22 @@
         <string name="sender_message">Uw bericht:</string>
         <string name="send_message_button">Verstuur</string>
     <!-- Voertuig Categorie -->
-    <string name="catM">Personenauto en bussen​</string>
-        <string name="catM_desc">Motorvoertuigen op vier of meer wielen, ontworpen en gebouwd voor het vervoer van personen​</string>
-    <string name="catN">Vrachtautos</string>
-        <string name="catN_desc">Motorvoertuigen op vier of meer wielen, ontworpen en gebouwd voor het vervoer van goederen​</string>
-    <string name="catO">Aanhangwagens</string>
-        <string name="catO_desc">Aanhangwagens (inclusief opleggers)​</string>
-    <string name="catL">Twee- en driewielige voertuigen</string>
-        <string name="catL_desc">Bromfietsen,motorfietsen, driewielers en vierwielers​</string>
-    <string name="catT">Trekkers op wielen​</string>
-        <string name="catT_desc">Trekkers op wielen​</string>
-    <string name="catC">Trekkers op rupsbanden​</string>
-        <string name="catC_desc">Trekkers op rupsbanden</string>
-    <string name="catR">Aanhangwagen t.b.v. land-of bosbouw​</string>
-        <string name="catR_desc">Aanhangwagen t.b.v land- of bosbouw​</string>
-    <string name="catS">Verwisselbare getrokken machines​</string>
-        <string name="catS_desc">Verwisselbare getrokken machines</string>
+    <string name="catM" translatable="false">Personenauto en bussen​</string>
+        <string name="catM_desc" translatable="false">Motorvoertuigen op vier of meer wielen, ontworpen en gebouwd voor het vervoer van personen​</string>
+    <string name="catN" translatable="false">Vrachtautos</string>
+        <string name="catN_desc" translatable="false">Motorvoertuigen op vier of meer wielen, ontworpen en gebouwd voor het vervoer van goederen​</string>
+    <string name="catO" translatable="false">Aanhangwagens</string>
+        <string name="catO_desc" translatable="false">Aanhangwagens (inclusief opleggers)​</string>
+    <string name="catL" translatable="false">Twee- en driewielige voertuigen</string>
+        <string name="catL_desc" translatable="false">Bromfietsen,motorfietsen, driewielers en vierwielers​</string>
+    <string name="catT" translatable="false">Trekkers op wielen​</string>
+        <string name="catT_desc" translatable="false">Trekkers op wielen​</string>
+    <string name="catC" translatable="false">Trekkers op rupsbanden​</string>
+        <string name="catC_desc" translatable="false">Trekkers op rupsbanden</string>
+    <string name="catR" translatable="false">Aanhangwagen t.b.v. land-of bosbouw​</string>
+        <string name="catR_desc" translatable="false">Aanhangwagen t.b.v land- of bosbouw​</string>
+    <string name="catS" translatable="false">Verwisselbare getrokken machines​</string>
+        <string name="catS_desc" translatable="false">Verwisselbare getrokken machines</string>
     <!-- Copyright -->
     <string name="copyrighttext">© 2016 door Nick en Raoul</string>
     <string name="opzoeken_intro">Vul hier het kenteken van het voertuig in</string>
