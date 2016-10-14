@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#37474F</color>
+    <color name="colorPrimary">#F5B824</color>
     <color name="colorPrimaryDark">#263238</color>
     <color name="colorAccent">#455A64</color>
     <!-- Grey Colors -->
@@ -10,4 +10,10 @@
     <color name="kentekenyellow">#FBD603</color>
     <color name="kentekenblack">#000000</color>
     <color name="kentekenblue">#014DDF</color>
+    <!-- Layout Colors -->
+    <color name="Layout_1">#024E76</color>
+    <color name="Layout_2">#39A6B2</color>
+    <color name="Layout_3">#FCE138</color>
+    <color name="Layout_4">#F5B824</color>
+    <color name="Layout_5">#F08106</color>
 </resources>

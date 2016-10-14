@@ -7,7 +7,7 @@
     <string name="kentekenopvragenheadertext">Stop Politie - Kenteken opvragen</string>
     <string name="kentekentoevoegenheadertext">Stop Politie - Kenteken toevoegen</string>
     <string name="kentekenscannerheadertext">Stop Politie - Kenteken scannen</string>
-<string name="intro_text">Kies optie hieronder</string>
+<string name="intro_text">Kies optie</string>
     <!-- Action Bar Menu Items -->
     <string name="over">Over deze app</string>
     <string name="hulp">Hulp</string>

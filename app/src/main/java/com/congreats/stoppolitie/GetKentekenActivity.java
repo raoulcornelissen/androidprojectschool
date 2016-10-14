@@ -1,12 +1,16 @@
 package com.congreats.stoppolitie;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +32,10 @@ public class GetKentekenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>"+getString(R.string.app_name)+"</font>"));
         setContentView(R.layout.getkenteken_activity);
+        LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.getkenteken_activity);
+        relativeLayout.setBackgroundColor(Color.rgb(57, 166, 178));
 
     }
     public void getsearch(View view) {

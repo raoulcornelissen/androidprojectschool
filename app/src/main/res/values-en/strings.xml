@@ -4,7 +4,7 @@
     <string name="bedankt_bericht">Thanks for your application, your request is being processed</string>
     <string name="category">Category</string>
     <string name="eerstekleur_text">Color #1</string>
-    <string name="intro_text">Choose option down below</string>
+    <string name="intro_text">Choose option</string>
     <string name="kenteken_text">License plate number</string>
     <string name="merk_text">Brand</string>
     <string name="model_text">Model</string>
