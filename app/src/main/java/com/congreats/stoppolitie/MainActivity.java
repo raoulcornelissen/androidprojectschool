@@ -54,4 +54,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent5 = new Intent(this, AddKentekenActivity.class);
         startActivity(intent5);
     }
+
+    public void goToScanner(View view){
+        Intent intent = new Intent(this, ScannerActivity.class);
+        startActivity(intent);
+    }
 }
