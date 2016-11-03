@@ -1,15 +1,11 @@
 package com.congreats.stoppolitie;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
@@ -19,24 +15,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.squareup.picasso.Picasso;
-
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by nickvankesteren on 14-10-16.
@@ -50,6 +40,7 @@ public class ScannerActivity extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.scanner_layout);
+		//StrictMode.enableDefaults(); // work around
 		this.imageView = (ImageView)this.findViewById(R.id.imageView);
 		Button photoButton = (Button) this.findViewById(R.id.button);
 		photoButton.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +57,7 @@ public class ScannerActivity extends AppCompatActivity {
 		if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
 			Bitmap photo = (Bitmap) data.getExtras().get("data");
 			imageView.setImageBitmap(photo);
-			PostLicensePlate(photo);
+			new PostLicensePlate().execute(photo);
 		}
 	}
 
@@ -84,57 +75,74 @@ public class ScannerActivity extends AppCompatActivity {
 		return imageEncoded;
 	}
 
-	private String readInputStreamToString(HttpURLConnection connection) {
-		String result = null;
-		StringBuffer sb = new StringBuffer();
-		InputStream is = null;
+	private class PostLicensePlate extends AsyncTask<Bitmap, Void, String>{
+		@Override
+		protected String doInBackground(Bitmap... images) {
+			try {
+				URL u = new URL("http://188.166.110.81/kentekenscannerSchool/kenteken.php");
+				HttpURLConnection conn = (HttpURLConnection) u.openConnection();
+				conn.setDoInput(true);
+				conn.setDoOutput(true);
+				conn.setRequestMethod("POST");
+				OutputStream os = conn.getOutputStream();
+				BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+				HashMap<String, String> postDataParams = new HashMap<>();
+				postDataParams.put("licensePlateImage", encodeToBase64(images[0]));
+				writer.write(getPostDataString(postDataParams));
+				writer.flush();
+				writer.close();
+				os.close();
+				String response = "";
+				int responseCode=conn.getResponseCode();
 
-		try {
-			is = new BufferedInputStream(connection.getInputStream());
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			String inputLine = "";
-			while ((inputLine = br.readLine()) != null) {
-				sb.append(inputLine);
-			}
-			result = sb.toString();
-		}
-		catch (Exception e) {
-			Log.i("error", "Error reading InputStream");
-			result = null;
-		}
-		finally {
-			if (is != null) {
-				try {
-					is.close();
+				if(responseCode == HttpURLConnection.HTTP_OK){
+					String line;
+					BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+					while ((line = br.readLine()) != null) {
+						response += line;
+					}
+				}else{
+					response = "---";
 				}
-				catch (IOException e) {
-					Log.i("error", "Error closing InputStream");
-				}
+
+				return response;
+			}catch(Exception ex){
+				ex.printStackTrace();
 			}
+			return "error";
 		}
 
-		return result;
-	}
+		private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+			StringBuilder result = new StringBuilder();
+			boolean first = true;
+			for(Map.Entry<String, String> entry : params.entrySet()){
+				if (first)
+					first = false;
+				else
+					result.append("&");
 
-	private void PostLicensePlate(Bitmap image){
-		try {
-			String rawData = "licensePlateImage="+encodeToBase64(image);
-			String type = "application/x-www-form-urlencoded";
-			String encodedData = URLEncoder.encode(rawData);
-			URL u = new URL("http://188.166.110.81/kentekenscanner/kenteken.php");
-			HttpURLConnection conn = (HttpURLConnection) u.openConnection();
-			conn.setDoOutput(true);
-			conn.setRequestMethod("POST");
-			conn.setRequestProperty("Content-Type", type);
-			conn.setRequestProperty("Content-Length", String.valueOf(encodedData.length()));
-			OutputStream os = conn.getOutputStream();
-			os.write(encodedData.getBytes());
+				result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+				result.append("=");
+				result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+			}
 
-			Log.e("TEST", readInputStreamToString(conn));
-			Toast.makeText(this, "Kenteken succesvol opgezocht!", Toast.LENGTH_SHORT).show();
-		}catch(Exception ex){
-			Log.e("error", "Error posting image");
-			Toast.makeText(this, "Er is iets fout gegaan tijdens het uploaden van de foto!", Toast.LENGTH_LONG).show();
+			return result.toString();
+		}
+
+		@Override
+		protected void onPostExecute(String kenteken) {
+			Log.e("TEST", kenteken);
+			Toast.makeText(ScannerActivity.this, "Kenteken succesvol opgezocht!", Toast.LENGTH_SHORT).show();
+			if(kenteken.startsWith("Exception when calling DefaultApi->recognizePost:")) {
+				Toast.makeText(ScannerActivity.this, "Er is een fout opgetreden met het ophalen van het kenteken!", Toast.LENGTH_LONG).show();
+			}else if(kenteken.startsWith("no_license_plate")){
+				Toast.makeText(ScannerActivity.this, "Er is geen geldig kenteken gevonden!", Toast.LENGTH_LONG).show();
+			}else{
+				TextView textView = (TextView) findViewById(R.id.textView);
+				textView.setText(kenteken);
+				Toast.makeText(ScannerActivity.this, "Het kenteken is: "+kenteken, Toast.LENGTH_LONG).show();
+			}
+			super.onPostExecute(kenteken);
 		}
 	}
 }
