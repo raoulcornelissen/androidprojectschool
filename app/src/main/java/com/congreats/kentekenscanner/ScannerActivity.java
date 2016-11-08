@@ -142,7 +142,6 @@ public class ScannerActivity extends AppCompatActivity {
 
 		@Override
 		protected void onPostExecute(String kenteken) {
-			Toast.makeText(ScannerActivity.this, "Kenteken succesvol opgezocht!", Toast.LENGTH_SHORT).show();
 			if(kenteken.startsWith("Exception when calling DefaultApi->recognizePost:")) {
 				Toast.makeText(ScannerActivity.this, "Er is een fout opgetreden met het ophalen van het kenteken!", Toast.LENGTH_LONG).show();
 			}else if(kenteken.startsWith("no_license_plate")){
