@@ -1,4 +1,4 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import android.content.pm.PackageInfo;
 import android.graphics.Color;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -25,9 +24,8 @@ public class AboutActivity extends AppCompatActivity {
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             String version = pInfo.versionName;
-            int verCode = pInfo.versionCode;
             TextView myAwesomeTextView = (TextView)findViewById(R.id.appversion);
-            myAwesomeTextView.setText("" + version);
+            myAwesomeTextView.setText(version);
         }catch (Exception ex){
 
         }

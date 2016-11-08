@@ -1,11 +1,10 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 /**
  * Created by raoul on 10-10-2016.

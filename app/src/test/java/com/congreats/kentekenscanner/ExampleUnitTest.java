@@ -1,4 +1,4 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import org.junit.Test;
 

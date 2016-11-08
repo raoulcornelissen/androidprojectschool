@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Stop Politie</string>
+    <string name="app_name">kenteken Scanner</string>
     <!-- activity names -->
-    <string name="aboutheadertext">Stop Politie - Over deze app</string>
-    <string name="helpheadertext">Stop Politie - Hulp pagina</string>
-    <string name="contactheadertext">Stop Politie - Contact opnemen</string>
-    <string name="kentekenopvragenheadertext">Stop Politie - Kenteken opvragen</string>
-    <string name="kentekentoevoegenheadertext">Stop Politie - Kenteken toevoegen</string>
-    <string name="kentekenscannerheadertext">Stop Politie - Kenteken scannen</string>
+    <string name="aboutheadertext">Kenteken Scanner - Over deze app</string>
+    <string name="helpheadertext">Kenteken Scanner - Hulp pagina</string>
+    <string name="contactheadertext">Kenteken Scanner - Contact opnemen</string>
+    <string name="kentekenopvragenheadertext">Kenteken Scanner - Kenteken opvragen</string>
+    <string name="kentekentoevoegenheadertext">Kenteken Scanner - Kenteken toevoegen</string>
+    <string name="kentekenscannerheadertext">Kenteken Scanner - Kenteken scannen</string>
 <string name="intro_text">Kies optie</string>
     <!-- Action Bar Menu Items -->
     <string name="over">Over deze app</string>
@@ -57,7 +57,7 @@
         <string name="q_2_listitem_2">Camera toegang</string>
         <!-- Q3 -->
         <string name="q_3">Is deze dienst illegaal?</string>
-        <string name="q_3_answer">Nee, voor zover wij weten is dit nog niet illegaal.</string>
+        <string name="q_3_answer">Nee, deze dienst is niet illegaal zolang deze wordt gebruikt op de openbare weg.</string>
 
     <!-- ContactActivity -->
         <string name="contact_title">Contact opnemen</string>
@@ -87,4 +87,8 @@
     <!-- Copyright -->
     <string name="copyrighttext">© 2016 door Nick en Raoul</string>
     <string name="opzoeken_intro">Vul hier het kenteken van het voertuig in</string>
+    <string name="btnScanAgain">Maak een nieuwe scan</string>
+    <string name="btnScanLayout">Scan kenteken</string>
+    <string name="txtScanLayout">Klik op de knop hieronder om een kenteken te scannen...</string>
+    <string name="contactOpnemen">Klik hier om contact op te nemen</string>
 </resources>

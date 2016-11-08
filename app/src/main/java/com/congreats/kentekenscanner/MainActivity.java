@@ -1,8 +1,7 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_main);
         relativeLayout.setBackgroundColor(Color.rgb(57, 166, 178));
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
@@ -49,10 +49,6 @@ public class MainActivity extends AppCompatActivity {
     public void getOpvragen(View view){
         Intent intent4 = new Intent(this, GetKentekenActivity.class);
         startActivity(intent4);
-    }
-    public void getToevoegen(View view){
-        Intent intent5 = new Intent(this, AddKentekenActivity.class);
-        startActivity(intent5);
     }
 
     public void goToScanner(View view){

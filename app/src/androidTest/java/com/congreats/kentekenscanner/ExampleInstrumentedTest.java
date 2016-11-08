@@ -1,4 +1,4 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

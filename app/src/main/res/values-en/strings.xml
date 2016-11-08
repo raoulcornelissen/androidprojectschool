@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Stop Police</string>
+    <string name="app_name">License Plate Scanner</string>
     <string name="bedankt_bericht">Thanks for your application, your request is being processed</string>
     <string name="category">Category</string>
     <string name="eerstekleur_text">Color #1</string>
@@ -40,17 +40,21 @@
     <string name="q_2_listitem_1">WiFi or internet opportunity</string>
     <string name="q_2_listitem_2">Camera access</string>
     <string name="q_3">This service is illegal?</string>
-    <string name="q_3_answer">No, as far as we know this is not illegal.</string>
+    <string name="q_3_answer">No, this service is not illegal as long as it is used on public roads.</string>
     <string name="send_message_button">Send</string>
     <string name="sender_email">Your E-mail</string>
     <string name="sender_message">Your Message</string>
     <string name="sender_name">Your Name</string>
     <string name="getkenteken_intro">Here you can request a manual search for license plates</string>
     <string name="opzoeken_title">Retrieve license plate info</string>
-    <string name="aboutheadertext">Stop Police - About this app</string>
-    <string name="contactheadertext">Stop Police - Contact</string>
-    <string name="helpheadertext">Stop Police - Help</string>
-    <string name="kentekenopvragenheadertext">Stop Police - Retrieve licensplate info</string>
-    <string name="kentekenscannerheadertext">Stop Police - Scan licensplate</string>
-    <string name="kentekentoevoegenheadertext">Stop Police - Add licenseplate</string>
+    <string name="aboutheadertext">License Plate Scanner - About this app</string>
+    <string name="contactheadertext">License Plate Scanner - Contact</string>
+    <string name="helpheadertext">License Plate Scanner - Help</string>
+    <string name="kentekenopvragenheadertext">License Plate Scanner - Retrieve licensplate info</string>
+    <string name="kentekenscannerheadertext">License Plate Scanner - Scan licensplate</string>
+    <string name="kentekentoevoegenheadertext">License Plate Scanner - Add licenseplate</string>
+    <string name="btnScanAgain">Make a new scan</string>
+    <string name="btnScanLayout">Scan License Plate</string>
+    <string name="txtScanLayout">Click on the button below to scan a License Plate...</string>
+    <string name="contactOpnemen">Click here to contact</string>
 </resources>

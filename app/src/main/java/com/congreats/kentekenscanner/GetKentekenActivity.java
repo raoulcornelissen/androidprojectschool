@@ -1,16 +1,16 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,21 +29,44 @@ import java.net.URL;
  */
 
 public class GetKentekenActivity extends AppCompatActivity {
+	String kenteken = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>"+getString(R.string.app_name)+"</font>"));
         setContentView(R.layout.getkenteken_activity);
+        Intent intent = getIntent();
+	    if(intent.hasExtra("kenteken")){
+		    kenteken = intent.getStringExtra("kenteken");
+            EditText input_kenteken = (EditText) findViewById(R.id.kentekenbox);
+            input_kenteken.setText(kenteken.toUpperCase());
+            searchFunc();
+		    Button button = (Button) findViewById(R.id.btnScanAgain);
+		    button.setVisibility(View.VISIBLE);
+	    }else{
+		    Button button = (Button) findViewById(R.id.btnScanAgain);
+		    button.setVisibility(View.GONE);
+	    }
         LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.getkenteken_activity);
         relativeLayout.setBackgroundColor(Color.rgb(57, 166, 178));
 
     }
     public void getsearch(View view) {
+        searchFunc();
+    }
+
+	public void scanAgain(View view) {
+		Intent intent = new Intent(this, ScannerActivity.class);
+		startActivity(intent);
+	}
+
+    private void searchFunc(){
         EditText input_kenteken = (EditText) findViewById(R.id.kentekenbox);
         String kenteken = input_kenteken.getText().toString().toUpperCase();
         int kentekenlengte = kenteken.length();
         if (kentekenlengte != 6) {
-            Toast.makeText(this, "Invalid", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Er is een fout opgetreden!", Toast.LENGTH_LONG).show();
         } else {
             try {
                 String response = new RetrieveFeedTask(kenteken).execute().get();
@@ -74,40 +97,39 @@ public class GetKentekenActivity extends AppCompatActivity {
                     //Categorie van auto
                     String categorietext = object.getString("europese_voertuigcategorie");
                     TextView categorietextfield = (TextView) findViewById(R.id.category);
-                    String m1 = "M1";
                     //https://www.rdw.nl/sites/tgk/Paginas/Voertuigcategorie%C3%ABn.aspx <-- Hier komt alle informatie van de categorien vandaan
                     if(categorietext.equals("M1") || categorietext.equals("M2") || categorietext.equals("M3"))
-                        {
-                            categorietextfield.setText("Personenautos en Bussen");
-                        }else if(categorietext.equals("N1") || categorietext.equals("N2") || categorietext.equals("N3"))
-                        {
-                            categorietextfield.setText("Vrachtautos");
-                        }else if(categorietext.equals("O1") || categorietext.equals("O2") || categorietext.equals("O3") || categorietext.equals("O4"))
-                        {
-                            categorietextfield.setText("Aanhangwagens");
-                        }else if(categorietext.equals("L1e") || categorietext.equals("L2e") || categorietext.equals("L3e") || categorietext.equals("L4e") || categorietext.equals("L5e") || categorietext.equals("L6e") || categorietext.equals("L7e"))
-                        {
-                            categorietextfield.setText("Twee- en driewielige voertuigen");
-                        }else if(categorietext.equals("T1") || categorietext.equals("T2") || categorietext.equals("T3") || categorietext.equals("T4") || categorietext.equals("T5"))
-                        {
-                         categorietextfield.setText("Trekkers op wielen");
-                        }else if (categorietext.equals("C"))
-                        {
-                         categorietextfield.setText("Trekkers op rupsbanden");
-                        }else if(categorietext.equals("R1") || categorietext.equals("R2") || categorietext.equals("R3") || categorietext.equals("R4"))
-                        {
-                            categorietextfield.setText("Aanhangwagen t.b.v. land-of bosbouw");
-                        }else if(categorietext.equals("S1") || categorietext.equals("S2"))
-                        {
-                            categorietextfield.setText("Verwisselbare getrokken machines");
-                        }else
-                        {
-                            categorietextfield.setText(categorietext);
-                        }
-                    Toast.makeText(this, "Success", Toast.LENGTH_LONG).show();
-                    } catch (JSONException e) {
-                    // Appropriate error handling code
+                    {
+                        categorietextfield.setText("Personenautos en Bussen");
+                    }else if(categorietext.equals("N1") || categorietext.equals("N2") || categorietext.equals("N3"))
+                    {
+                        categorietextfield.setText("Vrachtautos");
+                    }else if(categorietext.equals("O1") || categorietext.equals("O2") || categorietext.equals("O3") || categorietext.equals("O4"))
+                    {
+                        categorietextfield.setText("Aanhangwagens");
+                    }else if(categorietext.equals("L1e") || categorietext.equals("L2e") || categorietext.equals("L3e") || categorietext.equals("L4e") || categorietext.equals("L5e") || categorietext.equals("L6e") || categorietext.equals("L7e"))
+                    {
+                        categorietextfield.setText("Twee- en driewielige voertuigen");
+                    }else if(categorietext.equals("T1") || categorietext.equals("T2") || categorietext.equals("T3") || categorietext.equals("T4") || categorietext.equals("T5"))
+                    {
+                        categorietextfield.setText("Trekkers op wielen");
+                    }else if (categorietext.equals("C"))
+                    {
+                        categorietextfield.setText("Trekkers op rupsbanden");
+                    }else if(categorietext.equals("R1") || categorietext.equals("R2") || categorietext.equals("R3") || categorietext.equals("R4"))
+                    {
+                        categorietextfield.setText("Aanhangwagen t.b.v. land-of bosbouw");
+                    }else if(categorietext.equals("S1") || categorietext.equals("S2"))
+                    {
+                        categorietextfield.setText("Verwisselbare getrokken machines");
+                    }else
+                    {
+                        categorietextfield.setText(categorietext);
+                    }
+                    //Toast.makeText(this, "Het is gelukt om de informatie op te halen!", Toast.LENGTH_LONG).show();
+                } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast.makeText(this, "Er is een fout opgetreden!", Toast.LENGTH_LONG).show();
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -119,7 +141,6 @@ public class GetKentekenActivity extends AppCompatActivity {
 }
 class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
-    private Exception exception;
     String kenteken;
     public RetrieveFeedTask(String kenteken){
         super();
@@ -132,8 +153,6 @@ class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
     protected String doInBackground(Void... urls) {
         String API_URL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json";
-        // Do some validation here
-
         try {
             URL url = new URL(API_URL + "?kenteken=" + this.kenteken);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -156,13 +175,4 @@ class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
             return null;
         }
     }
-
-    /* protected void onPostExecute(String response) {
-        if(response == null) {
-            response = "THERE WAS AN ERROR";
-        }
-
-        return response;
-    } */
-
 }

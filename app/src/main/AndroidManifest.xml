@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.congreats.stoppolitie">
+    package="com.congreats.kentekenscanner">
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,30 +12,47 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.congreats.kentekenscanner.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutActivity"
-            android:label="@string/aboutheadertext">
+        <activity android:name="com.congreats.kentekenscanner.AboutActivity"
+            android:label="@string/aboutheadertext"
+            android:parentActivityName="com.congreats.kentekenscanner.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.congreats.kentekenscanner.MainActivity" />
         </activity>
-        <activity android:name=".HelpActivity"
-            android:label="@string/helpheadertext">
+        <activity android:name="com.congreats.kentekenscanner.HelpActivity"
+            android:label="@string/helpheadertext"
+            android:parentActivityName="com.congreats.kentekenscanner.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.congreats.kentekenscanner.MainActivity" />
         </activity>
-        <activity android:name=".ContactActivity"
-            android:label="@string/contactheadertext">
+        <activity android:name="com.congreats.kentekenscanner.ContactActivity"
+            android:label="@string/contactheadertext"
+            android:parentActivityName="com.congreats.kentekenscanner.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.congreats.kentekenscanner.MainActivity" />
         </activity>
-        <activity android:name=".GetKentekenActivity"
-            android:label="@string/kentekenopvragenheadertext">
+        <activity android:name="com.congreats.kentekenscanner.GetKentekenActivity"
+            android:label="@string/kentekenopvragenheadertext"
+            android:parentActivityName="com.congreats.kentekenscanner.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.congreats.kentekenscanner.MainActivity" />
         </activity>
-        <activity android:name=".AddKentekenActivity"
-            android:label="@string/kentekentoevoegenheadertext">
-        </activity>
-        <activity android:name=".ScannerActivity"
-                  android:label="scanner">
+        <activity android:name="com.congreats.kentekenscanner.ScannerActivity"
+                  android:label="@string/kentekenscannerheadertext"
+                  android:parentActivityName="com.congreats.kentekenscanner.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.congreats.kentekenscanner.MainActivity" />
         </activity>
     </application>
 

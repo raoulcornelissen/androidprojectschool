@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Halt Polizei</string>
+    <string name="app_name">Nummernschild-Scanner</string>
     <string name="bedankt_bericht">Danku  für Ihre zeigen, Ihre anforderung werde verarbeitet</string>
     <string name="category">Kategorie</string>
     <string name="eerstekleur_text">Farbe #1</string>
@@ -40,17 +40,21 @@
     <string name="q_2_listitem_1">WiFi oder Internet-Gelegenheit</string>
     <string name="q_2_listitem_2">Zugriff auf die Kamera</string>
     <string name="q_3">Dieser Service ist illegal?</string>
-    <string name="q_3_answer">Nein, so weit wir wissen, ist dies nicht illegal.</string>
+    <string name="q_3_answer">Nein, dieser Service ist nicht illegal, solange es auf öffentlichen Straßen verwendet wird.</string>
     <string name="send_message_button">Einreichen</string>
     <string name="sender_email">Ihre E-Mail:</string>
     <string name="sender_message">Ihre Nachricht:</string>
     <string name="sender_name">Ihr Name:</string>
     <string name="getkenteken_intro">Hier können Sie Nummernschilder erhalten manuell</string>
     <string name="opzoeken_title">Abrufen Kennzeichen info</string>
-    <string name="aboutheadertext">Halt Polizei - Über diese App</string>
-    <string name="contactheadertext">Halt Polizei - Kontakt</string>
-    <string name="helpheadertext">Halt Polizei - Hilfe Seite</string>
-    <string name="kentekenopvragenheadertext">Halt Polizei - Kennzeichen afrufen</string>
-    <string name="kentekenscannerheadertext">Halt Polizei - Kennzeichen fotografieren</string>
-    <string name="kentekentoevoegenheadertext">Halt Polizei - Kennzeichen hinzufügen</string>
+    <string name="aboutheadertext">Nummernschild-Scanner - Über diese App</string>
+    <string name="contactheadertext">Nummernschild-Scanner - Kontakt</string>
+    <string name="helpheadertext">Nummernschild-Scanner - Hilfe Seite</string>
+    <string name="kentekenopvragenheadertext">Nummernschild-Scanner - Kennzeichen afrufen</string>
+    <string name="kentekenscannerheadertext">Nummernschild-Scanner - Kennzeichen fotografieren</string>
+    <string name="kentekentoevoegenheadertext">Nummernschild-Scanner - Kennzeichen hinzufügen</string>
+    <string name="btnScanAgain">Erstellen Sie einen neuen Scan</string>
+    <string name="btnScanLayout">Scan Kennzeichen</string>
+    <string name="txtScanLayout">Klicken Sie auf die Schaltfläche unten, um ein Nummernschild zu scannen ...</string>
+    <string name="contactOpnemen">Klicken Sie hier zu kontaktieren</string>
 </resources>

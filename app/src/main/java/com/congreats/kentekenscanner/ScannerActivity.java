@@ -1,17 +1,19 @@
-package com.congreats.stoppolitie;
+package com.congreats.kentekenscanner;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,8 +41,11 @@ public class ScannerActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>"+getString(R.string.app_name)+"</font>"));
 		setContentView(R.layout.scanner_layout);
-		//StrictMode.enableDefaults(); // work around
+		LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.linScanner);
+		relativeLayout.setBackgroundColor(Color.rgb(57, 166, 178));
+
 		this.imageView = (ImageView)this.findViewById(R.id.imageView);
 		Button photoButton = (Button) this.findViewById(R.id.button);
 		photoButton.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +62,7 @@ public class ScannerActivity extends AppCompatActivity {
 		if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
 			Bitmap photo = (Bitmap) data.getExtras().get("data");
 			imageView.setImageBitmap(photo);
-			new PostLicensePlate().execute(photo);
+			new PostLicensePlate(this).execute(photo);
 		}
 	}
 
@@ -76,6 +81,12 @@ public class ScannerActivity extends AppCompatActivity {
 	}
 
 	private class PostLicensePlate extends AsyncTask<Bitmap, Void, String>{
+		Context context;
+
+		public PostLicensePlate(Context context){
+			this.context = context;
+		}
+
 		@Override
 		protected String doInBackground(Bitmap... images) {
 			try {
@@ -131,7 +142,6 @@ public class ScannerActivity extends AppCompatActivity {
 
 		@Override
 		protected void onPostExecute(String kenteken) {
-			Log.e("TEST", kenteken);
 			Toast.makeText(ScannerActivity.this, "Kenteken succesvol opgezocht!", Toast.LENGTH_SHORT).show();
 			if(kenteken.startsWith("Exception when calling DefaultApi->recognizePost:")) {
 				Toast.makeText(ScannerActivity.this, "Er is een fout opgetreden met het ophalen van het kenteken!", Toast.LENGTH_LONG).show();
@@ -140,7 +150,9 @@ public class ScannerActivity extends AppCompatActivity {
 			}else{
 				TextView textView = (TextView) findViewById(R.id.textView);
 				textView.setText(kenteken);
-				Toast.makeText(ScannerActivity.this, "Het kenteken is: "+kenteken, Toast.LENGTH_LONG).show();
+				Intent intent = new Intent(this.context, GetKentekenActivity.class);
+				intent.putExtra("kenteken", kenteken);
+				startActivity(intent);
 			}
 			super.onPostExecute(kenteken);
 		}
