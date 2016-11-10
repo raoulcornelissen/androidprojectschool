@@ -144,7 +144,7 @@ public class ScannerActivity extends AppCompatActivity {
 		protected void onPostExecute(String kenteken) {
 			if(kenteken.startsWith("Exception when calling DefaultApi->recognizePost:")) {
 				Toast.makeText(ScannerActivity.this, "Er is een fout opgetreden met het ophalen van het kenteken!", Toast.LENGTH_LONG).show();
-			}else if(kenteken.startsWith("no_license_plate")){
+			}else if(kenteken.startsWith("no_license_plate") || kenteken.startsWith("error")){
 				Toast.makeText(ScannerActivity.this, "Er is geen geldig kenteken gevonden!", Toast.LENGTH_LONG).show();
 			}else{
 				TextView textView = (TextView) findViewById(R.id.textView);
